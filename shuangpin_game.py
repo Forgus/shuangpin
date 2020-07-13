@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import random
 
 map = {}
 map['q'] = ['iu']
@@ -31,14 +32,12 @@ array = [
     'ong', 'iong', 'ai', 'en', 'eng', 'ang', 'an', 'uai', 'ing', 'iang',
     'uang', 'ou', 'ia', 'ua', 'ao', 'zh', 'ui', 'in', 'iao', 'ian'
 ]
-index = 0
+index = random.randint(0, 31)
 target = array[index]
 str = input('INPUT THE KEY OF %s:' % (target))
 while 'exit' != str:
     vals = map.get(str)
     if vals is not None and target in vals:
-        index = index + 1
-        if index >= 31:
-            index = 0
+        index = random.randint(0, 31)
     target = array[index]
     str = input('INPUT THE KEY OF %s:' % (target))
