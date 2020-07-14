@@ -34,10 +34,14 @@ array = [
 ]
 index = random.randint(0, 31)
 target = array[index]
+last = target
 str = input('INPUT THE KEY OF %s:' % (target))
 while 'exit' != str:
     vals = map.get(str)
     if vals is not None and target in vals:
         index = random.randint(0, 31)
+        while array[index] == last:
+            index = random.randint(0, 31)
     target = array[index]
+    last = target
     str = input('INPUT THE KEY OF %s:' % (target))
